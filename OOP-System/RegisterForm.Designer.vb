@@ -31,7 +31,9 @@ Partial Class RegisterForm
         txtPassword = New TextBox()
         PictureBox1 = New PictureBox()
         btnClose = New Button()
+        Panel1 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnRegister
@@ -51,7 +53,7 @@ Partial Class RegisterForm
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F)
-        Label2.Location = New Point(86, 433)
+        Label2.Location = New Point(75, 8)
         Label2.Name = "Label2"
         Label2.Size = New Size(144, 15)
         Label2.TabIndex = 2
@@ -61,7 +63,7 @@ Partial Class RegisterForm
         ' 
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("Segoe UI", 9F)
-        LinkLabel1.Location = New Point(226, 433)
+        LinkLabel1.Location = New Point(218, 8)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(37, 15)
         LinkLabel1.TabIndex = 3
@@ -125,25 +127,35 @@ Partial Class RegisterForm
         btnClose.TabIndex = 15
         btnClose.UseVisualStyleBackColor = False
         ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(LinkLabel1)
+        Panel1.Location = New Point(12, 430)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(340, 27)
+        Panel1.TabIndex = 16
+        ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(362, 464)
+        Controls.Add(Panel1)
         Controls.Add(btnClose)
         Controls.Add(PictureBox1)
         Controls.Add(btnRegister)
         Controls.Add(txtPassword)
-        Controls.Add(Label2)
         Controls.Add(txtContact)
         Controls.Add(txtEmail)
-        Controls.Add(LinkLabel1)
         Controls.Add(txtUsername)
         FormBorderStyle = FormBorderStyle.None
         Name = "RegisterForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "RegisterForm"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -156,4 +168,5 @@ Partial Class RegisterForm
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnClose As Button
+    Friend WithEvents Panel1 As Panel
 End Class

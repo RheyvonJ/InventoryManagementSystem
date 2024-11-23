@@ -11,9 +11,9 @@ Public Class RegisterForm
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         ' Validation: Ensure all fields are filled
         If String.IsNullOrWhiteSpace(txtUsername.Text) OrElse
-           String.IsNullOrWhiteSpace(txtEmail.Text) OrElse
-           String.IsNullOrWhiteSpace(txtContact.Text) OrElse
-           String.IsNullOrWhiteSpace(txtPassword.Text) Then
+               String.IsNullOrWhiteSpace(txtEmail.Text) OrElse
+               String.IsNullOrWhiteSpace(txtContact.Text) OrElse
+               String.IsNullOrWhiteSpace(txtPassword.Text) Then
             MessageBox.Show("Please fill in all the fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
@@ -96,5 +96,9 @@ Public Class RegisterForm
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+
     End Sub
 End Class

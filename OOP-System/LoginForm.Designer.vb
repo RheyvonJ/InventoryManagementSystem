@@ -26,11 +26,11 @@ Partial Class LoginForm
         txtLoginUsername = New TextBox()
         txtLoginPassword = New TextBox()
         btnLogin = New Button()
-        LinkLabel1 = New LinkLabel()
-        Label6 = New Label()
         PictureBox1 = New PictureBox()
-        Panel1 = New Panel()
         btnClose = New Button()
+        Label6 = New Label()
+        LinkLabel1 = New LinkLabel()
+        Panel1 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -75,27 +75,6 @@ Partial Class LoginForm
         btnLogin.Text = "Login"
         btnLogin.UseVisualStyleBackColor = False
         ' 
-        ' LinkLabel1
-        ' 
-        LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 9F)
-        LinkLabel1.Location = New Point(214, 8)
-        LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(49, 15)
-        LinkLabel1.TabIndex = 11
-        LinkLabel1.TabStop = True
-        LinkLabel1.Text = "Register"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 9F)
-        Label6.Location = New Point(74, 8)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(144, 15)
-        Label6.TabIndex = 10
-        Label6.Text = "Already have an Account?"
-        ' 
         ' PictureBox1
         ' 
         PictureBox1.Location = New Point(52, 37)
@@ -103,16 +82,6 @@ Partial Class LoginForm
         PictureBox1.Size = New Size(263, 187)
         PictureBox1.TabIndex = 12
         PictureBox1.TabStop = False
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.Controls.Add(LinkLabel1)
-        Panel1.Controls.Add(Label6)
-        Panel1.Location = New Point(4, 381)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(346, 30)
-        Panel1.TabIndex = 13
         ' 
         ' btnClose
         ' 
@@ -126,6 +95,37 @@ Partial Class LoginForm
         btnClose.Size = New Size(33, 30)
         btnClose.TabIndex = 14
         btnClose.UseVisualStyleBackColor = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 9F)
+        Label6.Location = New Point(74, 8)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(144, 15)
+        Label6.TabIndex = 10
+        Label6.Text = "Already have an Account?"
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Font = New Font("Segoe UI", 9F)
+        LinkLabel1.Location = New Point(214, 8)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(49, 15)
+        LinkLabel1.TabIndex = 11
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "Register"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Controls.Add(LinkLabel1)
+        Panel1.Controls.Add(Label6)
+        Panel1.Location = New Point(4, 381)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(346, 30)
+        Panel1.TabIndex = 13
         ' 
         ' LoginForm
         ' 
@@ -154,10 +154,10 @@ Partial Class LoginForm
     Friend WithEvents txtLoginUsername As TextBox
     Friend WithEvents txtLoginPassword As TextBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnClose As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Panel1 As Panel
 
 End Class
