@@ -1,0 +1,32 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Local Repos/v17
+/OOP-System/bin/Debug/net8.0-windows/OOP-System.dll
+/OOP-System/bin/Debug/net8.0-windows/OOP-System.exe
+/OOP-System/bin/Debug/net8.0-windows/OOP-System.pdb
+/OOP-System/obj/Debug/net8.0-windows/ref/OOP-System.dll
+/OOP-System/obj/Debug/net8.0-windows/refint/OOP-System.dll
+/OOP-System/obj/Debug/net8.0-windows/.NETCoreApp,Version=v8.0.AssemblyAttributes.vb
+/OOP-System/obj/Debug/net8.0-windows/apphost.exe
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.AssemblyInfoInputs.cache
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.AssemblyInfo.vb
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.assets.cache
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.dll
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.genruntimeconfig.cache
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.GeneratedMSBuildEditorConfig.editorconfig
+*.json
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.pdb
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.vbproj.CoreCompileInputs.cache
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.vbproj.FileListAbsolute.txt
+/OOP-System/obj/Debug/net8.0-windows/OOP-System.vbproj.GenerateResource.cache
+*.resources
+/OOP-System/obj/OOP-System.vbproj.nuget.dgspec.json
+/OOP-System/obj/project.assets.json
+/OOP-System/obj/project.nuget.cache
+/OOP-System/My Project/Resources.Designer.vb
+/OOP-System/My Project/Resources.resx
+/.vs/OOP-System/DesignTimeBuild/.dtbcache.v2
+*.vsidx
+*.suo

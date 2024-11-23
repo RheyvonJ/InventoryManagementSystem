@@ -26,19 +26,19 @@ Partial Class LoginForm
         txtLoginUsername = New TextBox()
         txtLoginPassword = New TextBox()
         btnLogin = New Button()
-        Label3 = New Label()
-        Label4 = New Label()
-        Label5 = New Label()
-        Panel2 = New Panel()
         LinkLabel1 = New LinkLabel()
         Label6 = New Label()
-        Panel2.SuspendLayout()
+        PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
+        btnClose = New Button()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(364, 44)
+        Label1.Location = New Point(385, 6)
         Label1.Name = "Label1"
         Label1.Size = New Size(0, 15)
         Label1.TabIndex = 0
@@ -46,85 +46,42 @@ Partial Class LoginForm
         ' txtLoginUsername
         ' 
         txtLoginUsername.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtLoginUsername.Location = New Point(143, 76)
+        txtLoginUsername.Location = New Point(43, 249)
         txtLoginUsername.Name = "txtLoginUsername"
-        txtLoginUsername.Size = New Size(171, 29)
+        txtLoginUsername.PlaceholderText = "Username"
+        txtLoginUsername.Size = New Size(283, 29)
         txtLoginUsername.TabIndex = 1
         ' 
         ' txtLoginPassword
         ' 
         txtLoginPassword.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtLoginPassword.Location = New Point(143, 129)
+        txtLoginPassword.Location = New Point(43, 284)
         txtLoginPassword.Name = "txtLoginPassword"
-        txtLoginPassword.Size = New Size(171, 29)
+        txtLoginPassword.PlaceholderText = "Password"
+        txtLoginPassword.Size = New Size(283, 29)
         txtLoginPassword.TabIndex = 2
         ' 
         ' btnLogin
         ' 
-        btnLogin.BackColor = SystemColors.ButtonHighlight
+        btnLogin.BackColor = Color.FromArgb(CByte(57), CByte(103), CByte(181))
+        btnLogin.FlatAppearance.BorderSize = 0
+        btnLogin.FlatStyle = FlatStyle.Flat
         btnLogin.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnLogin.ForeColor = SystemColors.ControlText
-        btnLogin.Location = New Point(143, 183)
+        btnLogin.ForeColor = SystemColors.ButtonFace
+        btnLogin.Location = New Point(43, 328)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(90, 36)
+        btnLogin.Size = New Size(283, 36)
         btnLogin.TabIndex = 3
-        btnLogin.Text = "LOGIN"
+        btnLogin.Text = "Login"
         btnLogin.UseVisualStyleBackColor = False
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(47, 80)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(93, 21)
-        Label3.TabIndex = 5
-        Label3.Text = "Username:"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(51, 133)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(89, 21)
-        Label4.TabIndex = 6
-        Label4.Text = "Password:"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(143, 31)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(62, 21)
-        Label5.TabIndex = 7
-        Label5.Text = "LOGIN"
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.FromArgb(CByte(142), CByte(202), CByte(230))
-        Panel2.BorderStyle = BorderStyle.Fixed3D
-        Panel2.Controls.Add(LinkLabel1)
-        Panel2.Controls.Add(Label6)
-        Panel2.Controls.Add(txtLoginPassword)
-        Panel2.Controls.Add(txtLoginUsername)
-        Panel2.Controls.Add(Label5)
-        Panel2.Controls.Add(btnLogin)
-        Panel2.Controls.Add(Label4)
-        Panel2.Controls.Add(Label3)
-        Panel2.Location = New Point(230, 62)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(391, 310)
-        Panel2.TabIndex = 9
         ' 
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.Location = New Point(234, 244)
+        LinkLabel1.Font = New Font("Segoe UI", 9F)
+        LinkLabel1.Location = New Point(214, 8)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(64, 20)
+        LinkLabel1.Size = New Size(49, 15)
         LinkLabel1.TabIndex = 11
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Register"
@@ -132,24 +89,63 @@ Partial Class LoginForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(51, 244)
+        Label6.Font = New Font("Segoe UI", 9F)
+        Label6.Location = New Point(74, 8)
         Label6.Name = "Label6"
-        Label6.Size = New Size(187, 20)
+        Label6.Size = New Size(144, 15)
         Label6.TabIndex = 10
         Label6.Text = "Already have an Account?"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(52, 37)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(263, 187)
+        PictureBox1.TabIndex = 12
+        PictureBox1.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Controls.Add(LinkLabel1)
+        Panel1.Controls.Add(Label6)
+        Panel1.Location = New Point(4, 381)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(346, 30)
+        Panel1.TabIndex = 13
+        ' 
+        ' btnClose
+        ' 
+        btnClose.BackColor = Color.Transparent
+        btnClose.FlatAppearance.BorderSize = 0
+        btnClose.FlatStyle = FlatStyle.Flat
+        btnClose.ForeColor = SystemColors.ControlText
+        btnClose.Image = My.Resources.Resources.Close
+        btnClose.Location = New Point(321, 2)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New Size(33, 30)
+        btnClose.TabIndex = 14
+        btnClose.UseVisualStyleBackColor = False
         ' 
         ' LoginForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(Panel2)
+        ClientSize = New Size(362, 417)
+        Controls.Add(btnClose)
+        Controls.Add(Panel1)
+        Controls.Add(PictureBox1)
         Controls.Add(Label1)
+        Controls.Add(txtLoginPassword)
+        Controls.Add(btnLogin)
+        Controls.Add(txtLoginUsername)
+        FormBorderStyle = FormBorderStyle.None
         Name = "LoginForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -158,11 +154,10 @@ Partial Class LoginForm
     Friend WithEvents txtLoginUsername As TextBox
     Friend WithEvents txtLoginPassword As TextBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnClose As Button
 
 End Class

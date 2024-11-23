@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\QCU\\source\\repos\\OOP-System\\OOP-System\\OOP-System.vbproj": {}
+    "C:\\Users\\QCU\\source\\Local Repos\\OOP-System\\OOP-System.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\QCU\\source\\repos\\OOP-System\\OOP-System\\OOP-System.vbproj": {
+    "C:\\Users\\QCU\\source\\Local Repos\\OOP-System\\OOP-System.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\QCU\\source\\repos\\OOP-System\\OOP-System\\OOP-System.vbproj",
+        "projectUniqueName": "C:\\Users\\QCU\\source\\Local Repos\\OOP-System\\OOP-System.vbproj",
         "projectName": "OOP-System",
-        "projectPath": "C:\\Users\\QCU\\source\\repos\\OOP-System\\OOP-System\\OOP-System.vbproj",
+        "projectPath": "C:\\Users\\QCU\\source\\Local Repos\\OOP-System\\OOP-System.vbproj",
         "packagesPath": "C:\\Users\\QCU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\QCU\\source\\repos\\OOP-System\\OOP-System\\obj\\",
+        "outputPath": "C:\\Users\\QCU\\source\\Local Repos\\OOP-System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
