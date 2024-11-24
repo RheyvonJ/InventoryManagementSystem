@@ -30,4 +30,8 @@ Public Class Dashboard
             Application.Exit()
         End If
     End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

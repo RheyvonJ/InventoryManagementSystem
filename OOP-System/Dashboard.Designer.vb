@@ -22,15 +22,23 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Panel1 = New Panel()
         Label2 = New Label()
         Panel2 = New Panel()
+        FlowLayoutPanel1 = New FlowLayoutPanel()
+        Panel8 = New Panel()
         btnDashboard = New LinkLabel()
         PictureBox4 = New PictureBox()
+        Panel9 = New Panel()
+        PictureBox5 = New PictureBox()
+        btnInv = New LinkLabel()
+        Panel10 = New Panel()
+        LinkLabel1 = New LinkLabel()
+        PictureBox6 = New PictureBox()
         Panel3 = New Panel()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
-        LinkLabel1 = New LinkLabel()
         Panel4 = New Panel()
         PictureBox2 = New PictureBox()
         Panel5 = New Panel()
@@ -46,12 +54,15 @@ Partial Class Dashboard
         Label8 = New Label()
         Label9 = New Label()
         Label10 = New Label()
-        btnInv = New LinkLabel()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        FlowLayoutPanel1.SuspendLayout()
+        Panel8.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        Panel9.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        Panel10.SuspendLayout()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
@@ -61,8 +72,6 @@ Partial Class Dashboard
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel7.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -87,17 +96,31 @@ Partial Class Dashboard
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(27), CByte(40), CByte(74))
-        Panel2.Controls.Add(PictureBox6)
-        Panel2.Controls.Add(PictureBox5)
-        Panel2.Controls.Add(btnInv)
-        Panel2.Controls.Add(btnDashboard)
-        Panel2.Controls.Add(PictureBox4)
+        Panel2.Controls.Add(FlowLayoutPanel1)
         Panel2.Controls.Add(Panel3)
-        Panel2.Controls.Add(LinkLabel1)
         Panel2.Location = New Point(-10, -8)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(203, 482)
         Panel2.TabIndex = 1
+        ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.Controls.Add(Panel8)
+        FlowLayoutPanel1.Controls.Add(Panel9)
+        FlowLayoutPanel1.Controls.Add(Panel10)
+        FlowLayoutPanel1.Location = New Point(10, 189)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Size = New Size(193, 284)
+        FlowLayoutPanel1.TabIndex = 0
+        ' 
+        ' Panel8
+        ' 
+        Panel8.Controls.Add(btnDashboard)
+        Panel8.Controls.Add(PictureBox4)
+        Panel8.Location = New Point(3, 3)
+        Panel8.Name = "Panel8"
+        Panel8.Size = New Size(200, 50)
+        Panel8.TabIndex = 0
         ' 
         ' btnDashboard
         ' 
@@ -106,7 +129,7 @@ Partial Class Dashboard
         btnDashboard.ForeColor = SystemColors.ButtonHighlight
         btnDashboard.LinkBehavior = LinkBehavior.HoverUnderline
         btnDashboard.LinkColor = SystemColors.ButtonHighlight
-        btnDashboard.Location = New Point(72, 234)
+        btnDashboard.Location = New Point(57, 16)
         btnDashboard.Name = "btnDashboard"
         btnDashboard.Size = New Size(89, 21)
         btnDashboard.TabIndex = 8
@@ -115,12 +138,77 @@ Partial Class Dashboard
         ' 
         ' PictureBox4
         ' 
-        PictureBox4.Image = My.Resources.Resources.dashboard
-        PictureBox4.Location = New Point(21, 220)
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(22, 16)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(53, 50)
+        PictureBox4.Size = New Size(31, 27)
         PictureBox4.TabIndex = 7
         PictureBox4.TabStop = False
+        ' 
+        ' Panel9
+        ' 
+        Panel9.Controls.Add(PictureBox5)
+        Panel9.Controls.Add(btnInv)
+        Panel9.Location = New Point(3, 59)
+        Panel9.Name = "Panel9"
+        Panel9.Size = New Size(200, 50)
+        Panel9.TabIndex = 1
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(20, 18)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(33, 28)
+        PictureBox5.TabIndex = 10
+        PictureBox5.TabStop = False
+        ' 
+        ' btnInv
+        ' 
+        btnInv.AutoSize = True
+        btnInv.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btnInv.ForeColor = SystemColors.ButtonHighlight
+        btnInv.LinkBehavior = LinkBehavior.HoverUnderline
+        btnInv.LinkColor = SystemColors.ButtonHighlight
+        btnInv.Location = New Point(54, 18)
+        btnInv.Name = "btnInv"
+        btnInv.Size = New Size(81, 21)
+        btnInv.TabIndex = 9
+        btnInv.TabStop = True
+        btnInv.Text = "Inventory"
+        ' 
+        ' Panel10
+        ' 
+        Panel10.Controls.Add(LinkLabel1)
+        Panel10.Controls.Add(PictureBox6)
+        Panel10.Location = New Point(3, 162)
+        Panel10.Margin = New Padding(3, 50, 3, 3)
+        Panel10.Name = "Panel10"
+        Panel10.Size = New Size(200, 50)
+        Panel10.TabIndex = 9
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.ActiveLinkColor = Color.FromArgb(CByte(27), CByte(40), CByte(74))
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LinkLabel1.LinkBehavior = LinkBehavior.NeverUnderline
+        LinkLabel1.LinkColor = Color.White
+        LinkLabel1.Location = New Point(40, 16)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(49, 17)
+        LinkLabel1.TabIndex = 4
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "Logout"
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
+        PictureBox6.Location = New Point(18, 16)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(31, 31)
+        PictureBox6.TabIndex = 5
+        PictureBox6.TabStop = False
         ' 
         ' Panel3
         ' 
@@ -151,20 +239,6 @@ Partial Class Dashboard
         Label1.TabIndex = 2
         Label1.Text = "         "
         ' 
-        ' LinkLabel1
-        ' 
-        LinkLabel1.ActiveLinkColor = Color.FromArgb(CByte(27), CByte(40), CByte(74))
-        LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.LinkBehavior = LinkBehavior.NeverUnderline
-        LinkLabel1.LinkColor = Color.White
-        LinkLabel1.Location = New Point(70, 424)
-        LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(49, 17)
-        LinkLabel1.TabIndex = 4
-        LinkLabel1.TabStop = True
-        LinkLabel1.Text = "Logout"
-        ' 
         ' Panel4
         ' 
         Panel4.BackColor = Color.FromArgb(CByte(2), CByte(188), CByte(237))
@@ -176,7 +250,7 @@ Partial Class Dashboard
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Image = My.Resources.Resources.Sales1
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(18, 12)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(65, 63)
@@ -196,20 +270,20 @@ Partial Class Dashboard
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(23, 27)
+        Label4.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(16, 20)
         Label4.Name = "Label4"
-        Label4.Size = New Size(59, 21)
+        Label4.Size = New Size(79, 30)
         Label4.TabIndex = 1
         Label4.Text = "19,999"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(36, 60)
+        Label3.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(22, 50)
         Label3.Name = "Label3"
-        Label3.Size = New Size(34, 15)
+        Label3.Size = New Size(60, 30)
         Label3.TabIndex = 0
         Label3.Text = "Sales"
         ' 
@@ -224,7 +298,7 @@ Partial Class Dashboard
         ' 
         ' PictureBox3
         ' 
-        PictureBox3.Image = My.Resources.Resources.Product
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
         PictureBox3.Location = New Point(22, 11)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(65, 64)
@@ -244,20 +318,20 @@ Partial Class Dashboard
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(38, 27)
+        Label5.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(36, 17)
         Label5.Name = "Label5"
-        Label5.Size = New Size(34, 25)
+        Label5.Size = New Size(37, 30)
         Label5.TabIndex = 1
         Label5.Text = "10"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(30, 60)
+        Label6.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(16, 45)
         Label6.Name = "Label6"
-        Label6.Size = New Size(49, 15)
+        Label6.Size = New Size(85, 30)
         Label6.TabIndex = 0
         Label6.Text = "Product"
         ' 
@@ -330,38 +404,6 @@ Partial Class Dashboard
         Label10.TabIndex = 10
         Label10.Text = "Total Sales"
         ' 
-        ' btnInv
-        ' 
-        btnInv.AutoSize = True
-        btnInv.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        btnInv.ForeColor = SystemColors.ButtonHighlight
-        btnInv.LinkBehavior = LinkBehavior.HoverUnderline
-        btnInv.LinkColor = SystemColors.ButtonHighlight
-        btnInv.Location = New Point(72, 315)
-        btnInv.Name = "btnInv"
-        btnInv.Size = New Size(81, 21)
-        btnInv.TabIndex = 9
-        btnInv.TabStop = True
-        btnInv.Text = "Inventory"
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.Image = My.Resources.Resources.inventory
-        PictureBox5.Location = New Point(21, 300)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(52, 50)
-        PictureBox5.TabIndex = 10
-        PictureBox5.TabStop = False
-        ' 
-        ' PictureBox6
-        ' 
-        PictureBox6.Image = My.Resources.Resources.logout1
-        PictureBox6.Location = New Point(33, 415)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(36, 40)
-        PictureBox6.TabIndex = 11
-        PictureBox6.TabStop = False
-        ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -376,12 +418,21 @@ Partial Class Dashboard
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "Dashboard"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Dashboard"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
+        FlowLayoutPanel1.ResumeLayout(False)
+        Panel8.ResumeLayout(False)
+        Panel8.PerformLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        Panel9.ResumeLayout(False)
+        Panel9.PerformLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        Panel10.ResumeLayout(False)
+        Panel10.PerformLayout()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -395,8 +446,6 @@ Partial Class Dashboard
         Panel7.PerformLayout()
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -426,5 +475,9 @@ Partial Class Dashboard
     Friend WithEvents btnDashboard As LinkLabel
     Friend WithEvents btnInv As LinkLabel
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel10 As Panel
     Friend WithEvents PictureBox6 As PictureBox
 End Class
