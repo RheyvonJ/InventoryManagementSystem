@@ -67,3 +67,4 @@ C:\Users\QCU\source\Local Repos\OOP-System\bin\Debug\net8.0-windows\OOP-System.r
 C:\Users\QCU\source\Local Repos\OOP-System\bin\Debug\net8.0-windows\OOP-System.pdb
 C:\Users\QCU\source\Local Repos\OOP-System\obj\Debug\net8.0-windows\OOP-System.genruntimeconfig.cache
 C:\Users\QCU\source\Local Repos\OOP-System\obj\Debug\net8.0-windows\ref\OOP-System.dll
+C:\Users\QCU\source\Local Repos\OOP-System\obj\Debug\net8.0-windows\OOP_System.Inventory.resources
