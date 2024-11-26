@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("OOP-System"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38b948a35565ba69596d80ca349f24168916e4f5"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4edb68c21ae03a9f8d4b1e18ced5d0579e8061bc"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("OOP-System"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("OOP-System"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

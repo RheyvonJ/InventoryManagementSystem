@@ -54,6 +54,7 @@ Partial Class Dashboard
         Label8 = New Label()
         Label9 = New Label()
         Label10 = New Label()
+        Label11 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         FlowLayoutPanel1.SuspendLayout()
@@ -404,11 +405,22 @@ Partial Class Dashboard
         Label10.TabIndex = 10
         Label10.Text = "Total Sales"
         ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Location = New Point(448, 234)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(119, 21)
+        Label11.TabIndex = 7
+        Label11.Text = "TOP PRODUCT"
+        ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(824, 468)
+        Controls.Add(Label11)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(Panel7)
         Controls.Add(Panel6)
@@ -447,6 +459,7 @@ Partial Class Dashboard
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
@@ -480,4 +493,5 @@ Partial Class Dashboard
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label11 As Label
 End Class
