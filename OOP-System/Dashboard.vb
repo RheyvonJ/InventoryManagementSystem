@@ -34,4 +34,9 @@ Public Class Dashboard
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btnInv_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnInv.LinkClicked
+        Inventory.Show()
+        Me.Hide()
+    End Sub
 End Class
