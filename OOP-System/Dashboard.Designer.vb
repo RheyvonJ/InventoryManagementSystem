@@ -42,19 +42,15 @@ Partial Class Dashboard
         Panel4 = New Panel()
         PictureBox2 = New PictureBox()
         Panel5 = New Panel()
-        Label4 = New Label()
+        lblTotalSales = New Label()
         Label3 = New Label()
         Panel6 = New Panel()
         PictureBox3 = New PictureBox()
         Panel7 = New Panel()
-        Label5 = New Label()
+        lblProductCount = New Label()
         Label6 = New Label()
-        TableLayoutPanel1 = New TableLayoutPanel()
-        Label7 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
-        Label10 = New Label()
         Label11 = New Label()
+        dgvDashboardInventory = New DataGridView()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         FlowLayoutPanel1.SuspendLayout()
@@ -72,7 +68,7 @@ Partial Class Dashboard
         Panel6.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel7.SuspendLayout()
-        TableLayoutPanel1.SuspendLayout()
+        CType(dgvDashboardInventory, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -126,7 +122,7 @@ Partial Class Dashboard
         ' btnDashboard
         ' 
         btnDashboard.AutoSize = True
-        btnDashboard.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btnDashboard.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
         btnDashboard.ForeColor = SystemColors.ButtonHighlight
         btnDashboard.LinkBehavior = LinkBehavior.HoverUnderline
         btnDashboard.LinkColor = SystemColors.ButtonHighlight
@@ -167,7 +163,7 @@ Partial Class Dashboard
         ' btnInv
         ' 
         btnInv.AutoSize = True
-        btnInv.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btnInv.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
         btnInv.ForeColor = SystemColors.ButtonHighlight
         btnInv.LinkBehavior = LinkBehavior.HoverUnderline
         btnInv.LinkColor = SystemColors.ButtonHighlight
@@ -261,22 +257,21 @@ Partial Class Dashboard
         ' Panel5
         ' 
         Panel5.BackColor = Color.FromArgb(CByte(254), CByte(254), CByte(254))
-        Panel5.Controls.Add(Label4)
+        Panel5.Controls.Add(lblTotalSales)
         Panel5.Controls.Add(Label3)
         Panel5.Location = New Point(354, 98)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(118, 86)
         Panel5.TabIndex = 3
         ' 
-        ' Label4
+        ' lblTotalSales
         ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(16, 20)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(79, 30)
-        Label4.TabIndex = 1
-        Label4.Text = "19,999"
+        lblTotalSales.AutoSize = True
+        lblTotalSales.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotalSales.Location = New Point(19, 20)
+        lblTotalSales.Name = "lblTotalSales"
+        lblTotalSales.Size = New Size(0, 30)
+        lblTotalSales.TabIndex = 1
         ' 
         ' Label3
         ' 
@@ -309,22 +304,21 @@ Partial Class Dashboard
         ' Panel7
         ' 
         Panel7.BackColor = Color.FromArgb(CByte(254), CByte(254), CByte(254))
-        Panel7.Controls.Add(Label5)
+        Panel7.Controls.Add(lblProductCount)
         Panel7.Controls.Add(Label6)
         Panel7.Location = New Point(637, 98)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(118, 86)
         Panel7.TabIndex = 5
         ' 
-        ' Label5
+        ' lblProductCount
         ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(36, 17)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(37, 30)
-        Label5.TabIndex = 1
-        Label5.Text = "10"
+        lblProductCount.AutoSize = True
+        lblProductCount.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblProductCount.Location = New Point(16, 15)
+        lblProductCount.Name = "lblProductCount"
+        lblProductCount.Size = New Size(0, 30)
+        lblProductCount.TabIndex = 1
         ' 
         ' Label6
         ' 
@@ -336,92 +330,35 @@ Partial Class Dashboard
         Label6.TabIndex = 0
         Label6.Text = "Product"
         ' 
-        ' TableLayoutPanel1
-        ' 
-        TableLayoutPanel1.BackgroundImageLayout = ImageLayout.Center
-        TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single
-        TableLayoutPanel1.ColumnCount = 4
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 12.9464283F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 87.05357F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 46F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 72F))
-        TableLayoutPanel1.Controls.Add(Label7, 0, 0)
-        TableLayoutPanel1.Controls.Add(Label8, 1, 0)
-        TableLayoutPanel1.Controls.Add(Label9, 2, 0)
-        TableLayoutPanel1.Controls.Add(Label10, 3, 0)
-        TableLayoutPanel1.Location = New Point(330, 258)
-        TableLayoutPanel1.Name = "TableLayoutPanel1"
-        TableLayoutPanel1.RowCount = 6
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel1.Size = New Size(346, 175)
-        TableLayoutPanel1.TabIndex = 6
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(7, 6)
-        Label7.Margin = New Padding(6, 5, 3, 0)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(16, 17)
-        Label7.TabIndex = 7
-        Label7.Text = "#"
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(65, 4)
-        Label8.Margin = New Padding(35, 3, 3, 0)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(115, 21)
-        Label8.TabIndex = 8
-        Label8.Text = "Product Name"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(231, 8)
-        Label9.Margin = New Padding(6, 7, 3, 0)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(34, 15)
-        Label9.TabIndex = 9
-        Label9.Text = "Date"
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label10.Location = New Point(277, 8)
-        Label10.Margin = New Padding(5, 7, 3, 0)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(65, 15)
-        Label10.TabIndex = 10
-        Label10.Text = "Total Sales"
-        ' 
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label11.Location = New Point(448, 234)
         Label11.Name = "Label11"
         Label11.Size = New Size(119, 21)
         Label11.TabIndex = 7
         Label11.Text = "TOP PRODUCT"
         ' 
+        ' dgvDashboardInventory
+        ' 
+        dgvDashboardInventory.AllowUserToAddRows = False
+        dgvDashboardInventory.BackgroundColor = SystemColors.Control
+        dgvDashboardInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvDashboardInventory.Location = New Point(269, 260)
+        dgvDashboardInventory.Name = "dgvDashboardInventory"
+        dgvDashboardInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        dgvDashboardInventory.RowHeadersVisible = False
+        dgvDashboardInventory.Size = New Size(476, 189)
+        dgvDashboardInventory.TabIndex = 27
+        ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(824, 468)
+        Controls.Add(dgvDashboardInventory)
         Controls.Add(Label11)
-        Controls.Add(TableLayoutPanel1)
         Controls.Add(Panel7)
         Controls.Add(Panel6)
         Controls.Add(Panel5)
@@ -456,8 +393,7 @@ Partial Class Dashboard
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel7.ResumeLayout(False)
         Panel7.PerformLayout()
-        TableLayoutPanel1.ResumeLayout(False)
-        TableLayoutPanel1.PerformLayout()
+        CType(dgvDashboardInventory, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -473,16 +409,11 @@ Partial Class Dashboard
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTotalSales As Label
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblProductCount As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents btnDashboard As LinkLabel
@@ -494,4 +425,5 @@ Partial Class Dashboard
     Friend WithEvents Panel10 As Panel
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents dgvDashboardInventory As DataGridView
 End Class

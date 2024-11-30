@@ -75,36 +75,36 @@ Partial Class RegisterForm
         txtUsername.Font = New Font("Segoe UI", 12F)
         txtUsername.Location = New Point(43, 241)
         txtUsername.Name = "txtUsername"
+        txtUsername.PlaceholderText = "Username"
         txtUsername.Size = New Size(283, 29)
         txtUsername.TabIndex = 4
-        txtUsername.Text = "Username"
         ' 
         ' txtEmail
         ' 
         txtEmail.Font = New Font("Segoe UI", 12F)
         txtEmail.Location = New Point(43, 276)
         txtEmail.Name = "txtEmail"
+        txtEmail.PlaceholderText = "Email"
         txtEmail.Size = New Size(283, 29)
         txtEmail.TabIndex = 5
-        txtEmail.Text = "Email"
         ' 
         ' txtContact
         ' 
         txtContact.Font = New Font("Segoe UI", 12F)
         txtContact.Location = New Point(43, 312)
         txtContact.Name = "txtContact"
+        txtContact.PlaceholderText = "Contact Number"
         txtContact.Size = New Size(283, 29)
         txtContact.TabIndex = 6
-        txtContact.Text = "Contact Number"
         ' 
         ' txtPassword
         ' 
         txtPassword.Font = New Font("Segoe UI", 12F)
         txtPassword.Location = New Point(43, 347)
         txtPassword.Name = "txtPassword"
+        txtPassword.PlaceholderText = "Password"
         txtPassword.Size = New Size(283, 29)
         txtPassword.TabIndex = 7
-        txtPassword.Text = "Password"
         ' 
         ' PictureBox1
         ' 

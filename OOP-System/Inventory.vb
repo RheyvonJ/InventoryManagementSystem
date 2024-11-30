@@ -1,159 +1,100 @@
-﻿Imports System.Data.SQLite
-Imports System.IO
-Imports System.Windows.Forms
-
+﻿
 Public Class Inventory
-    Private connString As String = "Data Source=C:\Users\QCU\source\Local Repos\OOP-System\bin\Debug\net8.0-windows\mydatabase.sqlite;Version=3;"
-    Private connection As SQLiteConnection
+    Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    ' Form Load: Initialize connection and load data into DataGridView
-    Private Sub InventoryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection = New SQLiteConnection(connString)
-        LoadData()
+
+        ' Initialize columns in the shared DataTable if they are not already added
+        If SharedData.InventoryTable.Columns.Count = 0 Then
+            SharedData.InventoryTable.Columns.Add("Product Number", GetType(Integer))
+            SharedData.InventoryTable.Columns.Add("Product Name", GetType(String))
+            SharedData.InventoryTable.Columns.Add("Stock", GetType(Integer))
+            SharedData.InventoryTable.Columns.Add("Cost", GetType(Decimal))
+            SharedData.InventoryTable.Columns.Add("Total Sales", GetType(Decimal))
+        End If
+
+        ' Bind the shared DataTable to dgvInventory
+        dgvInventory.DataSource = SharedData.InventoryTable
+
+
     End Sub
 
-    ' Load data from SQLite database into DataGridView
-    Private Sub LoadData()
-        Try
-            connection.Open()
-            Dim query As String = "SELECT * FROM Inventory"
-            Dim adapter As New SQLiteDataAdapter(query, connection)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-            dgvInventory.DataSource = table
-        Catch ex As Exception
-            MessageBox.Show("Error loading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            connection.Close()
-        End Try
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
+
+        ' Check if required fields are filled
+        If txtProductName.Text = "" Or txtStock.Text = "" Or txtCost.Text = "" Or txtSales.Text = "" Then
+            MessageBox.Show("Please fill in all fields.")
+            Exit Sub
+        End If
+        ' Add a new product row to the shared DataTable
+        SharedData.InventoryTable.Rows.Add(SharedData.InventoryTable.Rows.Count + 1, txtProductName.Text, CInt(txtStock.Text), CDec(txtCost.Text), CDec(txtSales.Text))
+
+        ' Refresh the DataGridView
+        dgvInventory.Refresh()
+
+        ' Update total sales in the Dashboard
+        Dashboard.UpdateTotalSales()
+
+        MessageBox.Show("Product added successfully!")
     End Sub
 
-    ' Navigate to Dashboard form
-    Private Sub btnInv_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnInv.LinkClicked
+    Public Sub RecalculateProductNumbers()
+        Dim productNumber As Integer = 1
+
+        For Each row As DataRow In SharedData.InventoryTable.Rows
+            row("Product Number") = productNumber
+            productNumber += 1
+        Next
+
+        dgvInventory.Refresh()
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If dgvInventory.SelectedRows.Count > 0 Then
+            ' Remove the selected row
+            SharedData.InventoryTable.Rows.RemoveAt(dgvInventory.SelectedRows(0).Index)
+
+            ' Recalculate product numbers
+            RecalculateProductNumbers()
+
+            ' Refresh DataGridView
+            dgvInventory.Refresh()
+
+            ' Update total sales in the Dashboard
+            Dashboard.UpdateTotalSales()
+            MessageBox.Show("Product deleted successfully!")
+        Else
+            MessageBox.Show("Please select a product to delete.")
+        End If
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        If dgvInventory.SelectedRows.Count > 0 Then
+            ' Get the selected row and update its values
+            Dim selectedRow As DataGridViewRow = dgvInventory.SelectedRows(0)
+            selectedRow.Cells("Product Name").Value = txtProductName.Text
+            selectedRow.Cells("Stock").Value = CInt(txtStock.Text)
+            selectedRow.Cells("Cost").Value = CDec(txtCost.Text)
+            selectedRow.Cells("Total Sales").Value = CDec(txtSales.Text)
+
+            ' Refresh the DataGridView
+            dgvInventory.Refresh()
+
+            ' Update total sales in Dashboard
+            Dashboard.UpdateTotalSales()
+
+            MessageBox.Show("Product updated successfully!")
+        Else
+            MessageBox.Show("Please select a product to update.")
+        End If
+    End Sub
+
+    Private Sub btnDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnDashboard.LinkClicked
         Dashboard.Show()
         Me.Hide()
     End Sub
 
-    ' Logout functionality
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If result = DialogResult.Yes Then
-            Application.Exit()
-        End If
-    End Sub
-
-    ' Add new record to Inventory
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If ValidateFields() Then
-            Try
-                connection.Open()
-                Dim query As String = "INSERT INTO Inventory (ProductName, Stock, Cost, TotalSales) VALUES (@ProductName, @Stock, @Cost, @TotalSales)"
-                Using command As New SQLiteCommand(query, connection)
-                    command.Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                    command.Parameters.AddWithValue("@Stock", Integer.Parse(txtStock.Text))
-                    command.Parameters.AddWithValue("@Cost", Double.Parse(txtCost.Text))
-                    command.Parameters.AddWithValue("@TotalSales", Double.Parse(txtSales.Text))
-                    command.ExecuteNonQuery()
-                End Using
-                MessageBox.Show("Record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ClearFields()
-                LoadData()
-            Catch ex As SQLiteException When ex.Message.Contains("no such table")
-                MessageBox.Show("Error: The 'Inventory' table does not exist. Please verify your database schema.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Catch ex As Exception
-                MessageBox.Show("Error adding record: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                connection.Close()
-            End Try
-        End If
-    End Sub
-
-    ' Clear the text fields
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        ClearFields()
-    End Sub
-
-    ' Delete selected record from Inventory
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If dgvInventory.SelectedRows.Count = 0 Then
-            MessageBox.Show("Please select a record to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        Dim id As Integer = Integer.Parse(dgvInventory.SelectedRows(0).Cells("ID").Value)
-
-        Try
-            connection.Open()
-            Dim query As String = "DELETE FROM Inventory WHERE ID = @ID"
-            Using command As New SQLiteCommand(query, connection)
-                command.Parameters.AddWithValue("@ID", id)
-                command.ExecuteNonQuery()
-            End Using
-
-            MessageBox.Show("Record deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            LoadData()
-        Catch ex As Exception
-            MessageBox.Show("Error deleting record: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            connection.Close()
-        End Try
-    End Sub
-
-    ' Validate the fields before any CRUD operation
-    Private Function ValidateFields() As Boolean
-        If txtProductName.Text = "" OrElse txtStock.Text = "" OrElse txtCost.Text = "" OrElse txtSales.Text = "" Then
-            MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-
-        If Not Integer.TryParse(txtStock.Text, New Integer) OrElse
-           Not Double.TryParse(txtCost.Text, New Double) OrElse
-           Not Double.TryParse(txtSales.Text, New Double) Then
-            MessageBox.Show("Please enter valid numeric values for Stock, Cost, and Total Sales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-
-        Return True
-    End Function
-
-    ' Clear the text fields
-    Private Sub ClearFields()
-        txtProductName.Clear()
-        txtStock.Clear()
-        txtCost.Clear()
-        txtSales.Clear()
-    End Sub
-
-    ' Update the selected record in Inventory
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If dgvInventory.SelectedRows.Count = 0 Then
-            MessageBox.Show("Please select a record to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        If ValidateFields() Then
-            Dim id As Integer = Integer.Parse(dgvInventory.SelectedRows(0).Cells("ID").Value)
-
-            Try
-                connection.Open()
-                Dim query As String = "UPDATE Inventory SET ProductName = @ProductName, Stock = @Stock, Cost = @Cost, TotalSales = @TotalSales WHERE ID = @ID"
-                Using command As New SQLiteCommand(query, connection)
-                    command.Parameters.AddWithValue("@ProductName", txtProductName.Text)
-                    command.Parameters.AddWithValue("@Stock", Integer.Parse(txtStock.Text))
-                    command.Parameters.AddWithValue("@Cost", Double.Parse(txtCost.Text))
-                    command.Parameters.AddWithValue("@TotalSales", Double.Parse(txtSales.Text))
-                    command.Parameters.AddWithValue("@ID", id)
-                    command.ExecuteNonQuery()
-                End Using
-                MessageBox.Show("Record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LoadData()
-                ClearFields()
-            Catch ex As Exception
-                MessageBox.Show("Error updating record: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                connection.Close()
-            End Try
-        End If
+        Me.Close()
     End Sub
 End Class

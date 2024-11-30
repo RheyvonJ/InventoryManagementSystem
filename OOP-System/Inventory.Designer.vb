@@ -51,10 +51,6 @@ Partial Class Inventory
         btnClear = New Button()
         btnDelete = New Button()
         dgvInventory = New DataGridView()
-        ProductName = New DataGridViewTextBoxColumn()
-        Stock = New DataGridViewTextBoxColumn()
-        Cost = New DataGridViewTextBoxColumn()
-        TotalSales = New DataGridViewTextBoxColumn()
         btnUpdate = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
@@ -329,32 +325,14 @@ Partial Class Inventory
         ' dgvInventory
         ' 
         dgvInventory.AllowUserToAddRows = False
+        dgvInventory.BackgroundColor = SystemColors.Control
         dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvInventory.Columns.AddRange(New DataGridViewColumn() {ProductName, Stock, Cost, TotalSales})
         dgvInventory.Location = New Point(266, 59)
         dgvInventory.Name = "dgvInventory"
-        dgvInventory.Size = New Size(444, 223)
+        dgvInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        dgvInventory.RowHeadersVisible = False
+        dgvInventory.Size = New Size(504, 223)
         dgvInventory.TabIndex = 26
-        ' 
-        ' ProductName
-        ' 
-        ProductName.HeaderText = "ProductName "
-        ProductName.Name = "ProductName"
-        ' 
-        ' Stock
-        ' 
-        Stock.HeaderText = "Stock"
-        Stock.Name = "Stock"
-        ' 
-        ' Cost
-        ' 
-        Cost.HeaderText = "Cost"
-        Cost.Name = "Cost"
-        ' 
-        ' TotalSales
-        ' 
-        TotalSales.HeaderText = "TotalSales"
-        TotalSales.Name = "TotalSales"
         ' 
         ' btnUpdate
         ' 
@@ -387,6 +365,7 @@ Partial Class Inventory
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "Inventory"
+        StartPosition = FormStartPosition.CenterParent
         Text = "Inventory"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
@@ -436,9 +415,5 @@ Partial Class Inventory
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents dgvInventory As DataGridView
-    Friend WithEvents ProductName As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Cost As DataGridViewTextBoxColumn
-    Friend WithEvents TotalSales As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As Button
 End Class
