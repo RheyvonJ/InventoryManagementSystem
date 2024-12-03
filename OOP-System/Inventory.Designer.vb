@@ -68,6 +68,7 @@ Partial Class Inventory
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = My.Resources.Resources.ogo2
         PictureBox1.Location = New Point(46, 23)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(110, 80)

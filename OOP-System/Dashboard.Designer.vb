@@ -219,6 +219,7 @@ Partial Class Dashboard
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = My.Resources.Resources.ogo21
         PictureBox1.Location = New Point(38, 16)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(110, 80)

@@ -77,6 +77,7 @@ Partial Class LoginForm
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = My.Resources.Resources.Logo1
         PictureBox1.Location = New Point(52, 37)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(263, 187)
