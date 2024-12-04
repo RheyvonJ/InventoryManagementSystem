@@ -58,6 +58,8 @@
             ' Update total sales in the Dashboard
             Dashboard.UpdateTotalSales()
 
+            Dashboard.UpdateProductCount()
+
             ' Refresh the DataGridView
             dgvInventory.Refresh()
 
@@ -92,6 +94,9 @@
 
                     ' Update total sales in the Dashboard
                     Dashboard.UpdateTotalSales()
+
+                    Dashboard.UpdateProductCount()
+
 
                     MessageBox.Show("Product deleted successfully!")
                 End If
