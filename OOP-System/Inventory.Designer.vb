@@ -78,11 +78,11 @@ Partial Class Inventory
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Label1.ForeColor = SystemColors.ControlLightLight
-        Label1.Location = New Point(15, 113)
+        Label1.Location = New Point(15, 117)
         Label1.Name = "Label1"
-        Label1.Size = New Size(43, 16)
+        Label1.Size = New Size(44, 17)
         Label1.TabIndex = 2
         Label1.Text = "         "
         ' 
@@ -93,7 +93,7 @@ Partial Class Inventory
         Panel3.Controls.Add(Label1)
         Panel3.Location = New Point(11, 10)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(200, 184)
+        Panel3.Size = New Size(222, 183)
         Panel3.TabIndex = 5
         ' 
         ' LinkLabel1
@@ -123,8 +123,8 @@ Partial Class Inventory
         ' 
         Panel10.Controls.Add(LinkLabel1)
         Panel10.Controls.Add(PictureBox6)
-        Panel10.Location = New Point(3, 162)
-        Panel10.Margin = New Padding(3, 50, 3, 3)
+        Panel10.Location = New Point(3, 212)
+        Panel10.Margin = New Padding(3, 100, 3, 3)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(200, 50)
         Panel10.TabIndex = 9
@@ -200,7 +200,7 @@ Partial Class Inventory
         FlowLayoutPanel1.Controls.Add(Panel10)
         FlowLayoutPanel1.Location = New Point(18, 196)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(193, 284)
+        FlowLayoutPanel1.Size = New Size(215, 374)
         FlowLayoutPanel1.TabIndex = 0
         ' 
         ' Panel2
@@ -210,16 +210,16 @@ Partial Class Inventory
         Panel2.Controls.Add(Panel3)
         Panel2.Location = New Point(-21, -16)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(203, 482)
+        Panel2.Size = New Size(233, 573)
         Panel2.TabIndex = 9
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(43, 27)
+        Label2.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(54, 33)
         Label2.Name = "Label2"
-        Label2.Size = New Size(81, 20)
+        Label2.Size = New Size(109, 30)
         Label2.TabIndex = 0
         Label2.Text = "Inventory"
         ' 
@@ -229,96 +229,107 @@ Partial Class Inventory
         Panel1.Controls.Add(Label2)
         Panel1.Location = New Point(163, -16)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(659, 69)
+        Panel1.Size = New Size(804, 87)
         Panel1.TabIndex = 8
         ' 
         ' txtProductName
         ' 
-        txtProductName.Location = New Point(312, 325)
+        txtProductName.Font = New Font("Segoe UI", 12F)
+        txtProductName.Location = New Point(402, 377)
         txtProductName.Name = "txtProductName"
-        txtProductName.Size = New Size(159, 23)
+        txtProductName.Size = New Size(159, 29)
         txtProductName.TabIndex = 15
         ' 
         ' txtStock
         ' 
-        txtStock.Location = New Point(496, 325)
+        txtStock.Font = New Font("Segoe UI", 12F)
+        txtStock.Location = New Point(586, 377)
         txtStock.Name = "txtStock"
-        txtStock.Size = New Size(159, 23)
+        txtStock.Size = New Size(159, 29)
         txtStock.TabIndex = 16
         ' 
         ' txtCost
         ' 
-        txtCost.Location = New Point(312, 381)
+        txtCost.Font = New Font("Segoe UI", 12F)
+        txtCost.Location = New Point(402, 433)
         txtCost.Name = "txtCost"
-        txtCost.Size = New Size(159, 23)
+        txtCost.Size = New Size(159, 29)
         txtCost.TabIndex = 17
         ' 
         ' txtSales
         ' 
-        txtSales.Location = New Point(499, 381)
+        txtSales.Font = New Font("Segoe UI", 12F)
+        txtSales.Location = New Point(589, 433)
         txtSales.Name = "txtSales"
-        txtSales.Size = New Size(159, 23)
+        txtSales.Size = New Size(159, 29)
         txtSales.TabIndex = 18
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(344, 304)
+        Label3.Font = New Font("Segoe UI", 12F)
+        Label3.Location = New Point(434, 356)
         Label3.Name = "Label3"
-        Label3.Size = New Size(84, 15)
+        Label3.Size = New Size(110, 21)
         Label3.TabIndex = 19
         Label3.Text = "Product Name"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(549, 304)
+        Label4.Font = New Font("Segoe UI", 12F)
+        Label4.Location = New Point(639, 356)
         Label4.Name = "Label4"
-        Label4.Size = New Size(36, 15)
+        Label4.Size = New Size(47, 21)
         Label4.TabIndex = 20
         Label4.Text = "Stock"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(371, 362)
+        Label5.Font = New Font("Segoe UI", 12F)
+        Label5.Location = New Point(460, 409)
         Label5.Name = "Label5"
-        Label5.Size = New Size(31, 15)
+        Label5.Size = New Size(41, 21)
         Label5.TabIndex = 21
         Label5.Text = "Cost"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(553, 363)
+        Label6.Font = New Font("Segoe UI", 12F)
+        Label6.Location = New Point(639, 409)
         Label6.Name = "Label6"
-        Label6.Size = New Size(33, 15)
+        Label6.Size = New Size(46, 21)
         Label6.TabIndex = 22
         Label6.Text = "Sales"
         ' 
         ' btnAdd
         ' 
-        btnAdd.Location = New Point(337, 410)
+        btnAdd.Font = New Font("Segoe UI", 11.25F)
+        btnAdd.Location = New Point(428, 485)
         btnAdd.Name = "btnAdd"
-        btnAdd.Size = New Size(48, 23)
+        btnAdd.Size = New Size(63, 33)
         btnAdd.TabIndex = 23
         btnAdd.Text = "Add"
         btnAdd.UseVisualStyleBackColor = True
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(423, 410)
+        btnClear.Font = New Font("Segoe UI", 11.25F)
+        btnClear.Location = New Point(514, 485)
         btnClear.Name = "btnClear"
-        btnClear.Size = New Size(48, 23)
+        btnClear.Size = New Size(63, 33)
         btnClear.TabIndex = 24
         btnClear.Text = "Clear"
         btnClear.UseVisualStyleBackColor = True
         ' 
         ' btnDelete
         ' 
-        btnDelete.Location = New Point(503, 410)
+        btnDelete.Font = New Font("Segoe UI", 11.25F)
+        btnDelete.Location = New Point(594, 485)
         btnDelete.Name = "btnDelete"
-        btnDelete.Size = New Size(48, 23)
+        btnDelete.Size = New Size(63, 33)
         btnDelete.TabIndex = 25
         btnDelete.Text = "Delete"
         btnDelete.UseVisualStyleBackColor = True
@@ -328,7 +339,7 @@ Partial Class Inventory
         dgvInventory.AllowUserToAddRows = False
         dgvInventory.BackgroundColor = SystemColors.Control
         dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvInventory.Location = New Point(266, 59)
+        dgvInventory.Location = New Point(339, 107)
         dgvInventory.Name = "dgvInventory"
         dgvInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
         dgvInventory.RowHeadersVisible = False
@@ -337,9 +348,10 @@ Partial Class Inventory
         ' 
         ' btnUpdate
         ' 
-        btnUpdate.Location = New Point(576, 410)
+        btnUpdate.Font = New Font("Segoe UI", 11.25F)
+        btnUpdate.Location = New Point(667, 485)
         btnUpdate.Name = "btnUpdate"
-        btnUpdate.Size = New Size(63, 23)
+        btnUpdate.Size = New Size(78, 33)
         btnUpdate.TabIndex = 27
         btnUpdate.Text = "Update"
         btnUpdate.UseVisualStyleBackColor = True
@@ -348,7 +360,7 @@ Partial Class Inventory
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(967, 555)
         Controls.Add(btnUpdate)
         Controls.Add(dgvInventory)
         Controls.Add(btnDelete)
@@ -366,7 +378,7 @@ Partial Class Inventory
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "Inventory"
-        StartPosition = FormStartPosition.CenterParent
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Inventory"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)

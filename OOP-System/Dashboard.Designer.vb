@@ -77,16 +77,16 @@ Partial Class Dashboard
         Panel1.Controls.Add(Label2)
         Panel1.Location = New Point(174, -8)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(659, 69)
+        Panel1.Size = New Size(797, 87)
         Panel1.TabIndex = 0
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(43, 26)
+        Label2.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(44, 26)
         Label2.Name = "Label2"
-        Label2.Size = New Size(89, 20)
+        Label2.Size = New Size(119, 30)
         Label2.TabIndex = 0
         Label2.Text = "Dashboard"
         ' 
@@ -97,7 +97,7 @@ Partial Class Dashboard
         Panel2.Controls.Add(Panel3)
         Panel2.Location = New Point(-10, -8)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(203, 482)
+        Panel2.Size = New Size(223, 571)
         Panel2.TabIndex = 1
         ' 
         ' FlowLayoutPanel1
@@ -107,7 +107,7 @@ Partial Class Dashboard
         FlowLayoutPanel1.Controls.Add(Panel10)
         FlowLayoutPanel1.Location = New Point(10, 189)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(193, 284)
+        FlowLayoutPanel1.Size = New Size(210, 362)
         FlowLayoutPanel1.TabIndex = 0
         ' 
         ' Panel8
@@ -178,8 +178,8 @@ Partial Class Dashboard
         ' 
         Panel10.Controls.Add(LinkLabel1)
         Panel10.Controls.Add(PictureBox6)
-        Panel10.Location = New Point(3, 162)
-        Panel10.Margin = New Padding(3, 50, 3, 3)
+        Panel10.Location = New Point(3, 212)
+        Panel10.Margin = New Padding(3, 100, 3, 3)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(200, 50)
         Panel10.TabIndex = 9
@@ -214,13 +214,13 @@ Partial Class Dashboard
         Panel3.Controls.Add(Label1)
         Panel3.Location = New Point(3, 3)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(200, 184)
+        Panel3.Size = New Size(217, 184)
         Panel3.TabIndex = 5
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.ogo21
-        PictureBox1.Location = New Point(38, 16)
+        PictureBox1.Location = New Point(49, 23)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(110, 80)
         PictureBox1.TabIndex = 0
@@ -229,11 +229,11 @@ Partial Class Dashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ControlLightLight
-        Label1.Location = New Point(15, 113)
+        Label1.Location = New Point(9, 124)
         Label1.Name = "Label1"
-        Label1.Size = New Size(43, 16)
+        Label1.Size = New Size(44, 17)
         Label1.TabIndex = 2
         Label1.Text = "         "
         ' 
@@ -241,7 +241,7 @@ Partial Class Dashboard
         ' 
         Panel4.BackColor = Color.FromArgb(CByte(2), CByte(188), CByte(237))
         Panel4.Controls.Add(PictureBox2)
-        Panel4.Location = New Point(255, 98)
+        Panel4.Location = New Point(333, 109)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(99, 86)
         Panel4.TabIndex = 2
@@ -260,7 +260,7 @@ Partial Class Dashboard
         Panel5.BackColor = Color.FromArgb(CByte(254), CByte(254), CByte(254))
         Panel5.Controls.Add(lblTotalSales)
         Panel5.Controls.Add(Label3)
-        Panel5.Location = New Point(354, 98)
+        Panel5.Location = New Point(432, 109)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(118, 86)
         Panel5.TabIndex = 3
@@ -288,7 +288,7 @@ Partial Class Dashboard
         ' 
         Panel6.BackColor = Color.FromArgb(CByte(239), CByte(154), CByte(17))
         Panel6.Controls.Add(PictureBox3)
-        Panel6.Location = New Point(538, 98)
+        Panel6.Location = New Point(616, 109)
         Panel6.Name = "Panel6"
         Panel6.Size = New Size(99, 86)
         Panel6.TabIndex = 4
@@ -307,7 +307,7 @@ Partial Class Dashboard
         Panel7.BackColor = Color.FromArgb(CByte(254), CByte(254), CByte(254))
         Panel7.Controls.Add(lblProductCount)
         Panel7.Controls.Add(Label6)
-        Panel7.Location = New Point(637, 98)
+        Panel7.Location = New Point(715, 109)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(118, 86)
         Panel7.TabIndex = 5
@@ -335,7 +335,7 @@ Partial Class Dashboard
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(448, 234)
+        Label11.Location = New Point(493, 234)
         Label11.Name = "Label11"
         Label11.Size = New Size(119, 21)
         Label11.TabIndex = 7
@@ -346,18 +346,18 @@ Partial Class Dashboard
         dgvDashboardInventory.AllowUserToAddRows = False
         dgvDashboardInventory.BackgroundColor = SystemColors.Control
         dgvDashboardInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvDashboardInventory.Location = New Point(269, 260)
+        dgvDashboardInventory.Location = New Point(311, 258)
         dgvDashboardInventory.Name = "dgvDashboardInventory"
         dgvDashboardInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
         dgvDashboardInventory.RowHeadersVisible = False
-        dgvDashboardInventory.Size = New Size(476, 189)
+        dgvDashboardInventory.Size = New Size(505, 207)
         dgvDashboardInventory.TabIndex = 27
         ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(824, 468)
+        ClientSize = New Size(967, 555)
         Controls.Add(dgvDashboardInventory)
         Controls.Add(Label11)
         Controls.Add(Panel7)

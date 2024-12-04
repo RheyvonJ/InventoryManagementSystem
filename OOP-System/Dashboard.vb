@@ -2,28 +2,34 @@
 Imports System.IO
 Public Class Dashboard
 
+    Private UserDetails As Dictionary(Of String, String)
+
+
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvDashboardInventory.DataSource = SharedData.InventoryTable
         UpdateTotalSales()
         UpdateProductCount()
         CalculateTotalSales()
-        ' Check if user details were passed
+
+        ' Check if user details are passed via Tag
         If TypeOf Me.Tag Is Dictionary(Of String, String) Then
-            Dim userDetails As Dictionary(Of String, String) = CType(Me.Tag, Dictionary(Of String, String))
+            UserDetails = CType(Me.Tag, Dictionary(Of String, String))
 
-            ' Extract and display user details without labels
-            Dim username As String = userDetails("Username")
-            Dim email As String = userDetails("Email")
-            Dim contact As String = userDetails("ContactNo")
-
-            ' Display only the values (no labels)
-            Label1.Text = $"{username}" & vbCrLf &
-                          $"{email}" & vbCrLf &
-                          $"{contact}"
-
+            ' Display user details in the label
+            UpdateUserLabel()
         End If
+    End Sub
 
+    Private Sub UpdateUserLabel()
+        ' Ensure UserDetails is not null
+        If UserDetails IsNot Nothing Then
+            Dim username = UserDetails("Username")
+            Dim email = UserDetails("Email")
+            Dim contact = UserDetails("ContactNo")
 
+            ' Update the label with user information
+            Label1.Text = $"{username}" & vbCrLf & $"{email}" & vbCrLf & $"{contact}"
+        End If
     End Sub
     Public Sub CalculateTotalSales()
         ' Initialize the total sales value
@@ -71,4 +77,7 @@ Public Class Dashboard
 
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

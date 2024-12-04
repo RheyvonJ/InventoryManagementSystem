@@ -1,5 +1,16 @@
 ﻿Public Class Inventory
+    Private UserDetails As Dictionary(Of String, String)
+
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ' Check if user details are passed via Tag
+        If TypeOf Me.Tag Is Dictionary(Of String, String) Then
+            UserDetails = CType(Me.Tag, Dictionary(Of String, String))
+
+            ' Display user details in the label
+            UpdateUserLabel()
+        End If
+
         ' Initialize columns in the shared DataTable if they are not already added
         If SharedData.InventoryTable.Columns.Count = 0 Then
             SharedData.InventoryTable.Columns.Add("Product Number", GetType(Integer))
@@ -13,6 +24,18 @@
         dgvInventory.AutoGenerateColumns = True
         dgvInventory.DataSource = SharedData.InventoryTable
         dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
+    Private Sub UpdateUserLabel()
+        ' Ensure UserDetails is not null
+        If UserDetails IsNot Nothing Then
+            Dim username = UserDetails("Username")
+            Dim email = UserDetails("Email")
+            Dim contact = UserDetails("ContactNo")
+
+            ' Update the label with user information
+            Label1.Text = $"{username}" & vbCrLf & $"{email}" & vbCrLf & $"{contact}"
+        End If
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -122,5 +145,9 @@
         txtStock.Clear()
         txtCost.Clear()
         txtSales.Clear()
+    End Sub
+
+    Private Sub dgvInventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInventory.CellContentClick
+
     End Sub
 End Class
